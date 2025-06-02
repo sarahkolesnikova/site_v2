@@ -1,0 +1,402 @@
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Kokoro, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: white;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navegação */
+        .header-logo {
+            width: 230px;
+            height: 230px;
+            left: 71.96px;
+            top: 0px;
+            position: absolute;
+            border-radius: 64px;
+        }
+
+        .nav-item {
+            height: 35px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .nav-text {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 24px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-decoration: none;
+        }
+
+        .nav-home {
+            width: 104.36px;
+            left: 427.47px;
+            top: 125px;
+        }
+
+        .nav-home .nav-text {
+            color: #6A09A2;
+        }
+
+        .nav-research {
+            width: 122.12px;
+            left: 568.46px;
+            top: 125px;
+        }
+
+        .nav-research .nav-text {
+            color: #52894D;
+        }
+
+        .nav-join-us {
+            width: 123.23px;
+            left: 1223.48px;
+            top: 125px;
+        }
+
+        .nav-join-us .nav-text {
+            color: #52894D;
+        }
+
+        .nav-our-team {
+            width: 133.22px;
+            left: 719.45px;
+            top: 125px;
+        }
+
+        .nav-our-team .nav-text {
+            color: #6A09A2;
+        }
+
+        .nav-awards {
+            width: 108.80px;
+            left: 1078.04px;
+            top: 125px;
+        }
+
+        .nav-awards .nav-text {
+            color: #6A09A2;
+        }
+
+        .nav-publications {
+            width: 155.43px;
+            left: 885.98px;
+            top: 125px;
+        }
+
+        .nav-publications .nav-text {
+            color: #52894D;
+        }
+
+        .header-divider {
+            width: 1350px;
+            height: 0px;
+            left: 50px;
+            top: 197px;
+            position: absolute;
+            outline: 2px black solid;
+            outline-offset: -1px;
+        }
+
+        /* Footer */
+        .footer-wrapper {
+            width: 1350px;
+            height: 71px;
+            left: 16px;
+            top: 1050px;
+            position: absolute;
+        }
+
+        .footer-divider {
+            width: 1344px;
+            height: 0px;
+            left: 38px;
+            top: 2px;
+            position: absolute;
+            outline: 2px black solid;
+            outline-offset: -1px;
+        }
+
+        .footer-logo {
+            width: 65px;
+            height: 65px;
+            left: 564px;
+            top: 13px;
+            position: absolute;
+            border-radius: 64px;
+        }
+
+        .footer-copyright {
+            width: 66.34px;
+            height: 47px;
+            left: 661px;
+            top: 18px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 12px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        .footer-instagram-icon {
+            width: 30px;
+            height: 30px;
+            left: 759px;
+            top: 27px;
+            position: absolute;
+        }
+
+        /* Conteúdo Principal */
+        .main-image {
+            width: 760.80px;
+            height: 444px;
+            left: 145px;
+            top: 206px;
+            position: absolute;
+        }
+
+        .mission-panel {
+            width: 850px;
+            height: 353px;
+            left: 100px;
+            top: 680px;
+            position: absolute;
+            background: #F5F5F5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 36px;
+        }
+
+        .mission-text {
+            width: 750px;
+            left: 150px;
+            position: absolute;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            color: black;
+            font-size: 15px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            line-height: 30px;
+            word-wrap: break-word;
+        }
+
+        .mission-text-part1 {
+            height: 89px;
+            top: 702px;
+        }
+
+        .mission-text-part2 {
+            height: 134px;
+            top: 793px;
+        }
+
+        .mission-text-part3 {
+            height: 79px;
+            top: 913px;
+        }
+
+        .mission-title-box {
+            width: 166px;
+            height: 54px;
+            left: 100px;
+            top: 222px;
+            position: absolute;
+            background: #F5F5F5;
+            border-radius: 17px;
+        }
+
+        .mission-title-text {
+            width: 134px;
+            height: 50px;
+            left: 116px;
+            top: 224px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: rgba(0, 0, 0, 0.83);
+            font-size: 32px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        /* Painel Lateral (Tiago Medina) */
+        .profile-main-panel {
+            width: 333px;
+            height: 811px;
+            left: 1017px;
+            top: 222px;
+            position: absolute;
+            background: #F5F5F5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 35px;
+        }
+
+        .profile-inner-panel {
+            width: 288px;
+            height: 394px;
+            left: 1039px;
+            top: 245px;
+            position: absolute;
+            background: #F5F5F5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
+            border: 1px #DFE1B7 solid;
+        }
+
+        .profile-picture {
+            width: 425.25px;
+            height: 318.94px;
+            left: 974.36px;
+            top: 254.39px;
+            position: absolute;
+            border-radius: 70px;
+        }
+
+        .profile-name-box {
+            width: 335.93px;
+            height: 56.34px;
+            left: 1017.13px;
+            top: 573.63px;
+            position: absolute;
+            background: #F5F5F5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 17px;
+        }
+
+        .profile-name-text {
+            width: 310.87px;
+            height: 52.96px;
+            left: 1028.78px;
+            top: 576.76px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #0B0B0B;
+            font-size: 30px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-title-group-leader {
+            width: 286px;
+            height: 29px;
+            left: 1041px;
+            top: 655px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #68090D;
+            font-size: 22px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.66px;
+            word-wrap: break-word;
+        }
+
+        .profile-role-translational {
+            width: 216px;
+            height: 68px;
+            left: 1072px;
+            top: 689px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 20px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        .profile-role-assistant-prof {
+            width: 290px;
+            height: 29px;
+            left: 1039px;
+            top: 767px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #68090D;
+            font-size: 22px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.66px;
+            word-wrap: break-word;
+        }
+
+        .profile-department-info {
+            width: 242px;
+            height: 124px;
+            left: 1061px;
+            top: 796px;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 20px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        .profile-email-icon {
+            width: 40px;
+            height: 40px;
+            left: 1043px;
+            top: 939px;
+            position: absolute;
+        }
+
+        .profile-email-text {
+            width: 240px;
+            height: 29px;
+            left: 1091px;
+            top: 944px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 20px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
