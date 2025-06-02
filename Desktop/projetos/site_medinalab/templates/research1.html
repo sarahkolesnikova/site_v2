@@ -1,242 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Pesquisa</title>
+    <title>Research</title>
     <style>
-        body {
+        body, html {
+            height: 100%;
             margin: 0;
-            font-family: Kokoro, sans-serif; /* Assumindo que Kokoro é uma fonte definida ou importada */
+            font-family: Kokoro, sans-serif; 
         }
 
-        .container {
+        .page-container {
             width: 100%;
-            height: 100%;
+            height: 100%; 
             position: relative;
             background: white;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
-        /* Estilos do Header/Navegação */
-        .header-logo {
+        /* Cabeçalho e Logo */
+        .site-header {
+            position: relative;
+        }
+
+        .logo {
             width: 230px;
-            height: 176px; /* Ajustado para a imagem específica */
-            left: 71.96px;
+            height: 230px;
+            left: 136px;
             top: 0px;
             position: absolute;
             border-radius: 64px;
         }
 
-        .nav-item {
-            height: 35px;
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+        /* Navegação */
+        .navigation {
+            /* Contêiner lógico para os links */
         }
 
-        .nav-item-text {
-            width: 100%;
-            height: 100%;
+        .navigation {
+            /* O contêiner de navegação em si não precisa de posicionamento se os links são posicionados individualmente */
+        }
+
+        .nav-item {
+            position: absolute;
+            height: 35px;
             display: flex;
             justify-content: center;
-            flex-direction: column;
+            align-items: center;
             font-size: 24px;
-            font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-decoration: none;
         }
 
-        .nav-home {
-            width: 104.36px;
-            left: 427.47px;
-            top: 125px;
-        }
+        .nav-home { width: 94px; left: 462px; top: 125px; color: #6A09A2; }
+        .nav-research { width: 110px; left: 589px; top: 125px; color: #52894D; }
+        .nav-our-team { width: 126px; left: 730px; top: 125px; color: #6A09A2; }
+        .nav-publications { width: 140px; left: 875px; top: 125px; color: #52894D; }
+        .nav-awards { width: 98px; left: 1048px; top: 125px; color: #6A09A2; }
+        .nav-join-us { width: 111px; left: 1179px; top: 125px; color: #52894D; }
 
-        .nav-home .nav-item-text {
-            color: #6A09A2;
-        }
-
-        .nav-research {
-            width: 122.12px;
-            left: 568.46px;
-            top: 125px;
-        }
-
-        .nav-research .nav-item-text {
-            color: #52894D;
-        }
-
-        .nav-join-us {
-            width: 123.23px;
-            left: 1223.48px;
-            top: 125px;
-        }
-
-        .nav-join-us .nav-item-text {
-            color: #52894D;
-        }
-
-        .nav-our-team {
-            width: 133.22px;
-            left: 719.45px;
-            top: 125px;
-        }
-
-        .nav-our-team .nav-item-text {
-            color: #6A09A2;
-        }
-
-        .nav-awards {
-            width: 108.80px;
-            left: 1078.04px;
-            top: 125px;
-        }
-
-        .nav-awards .nav-item-text {
-            color: #6A09A2;
-        }
-
-        .nav-publications {
-            width: 155.43px;
-            left: 885.98px;
-            top: 125px;
-        }
-
-        .nav-publications .nav-item-text {
-            color: #52894D;
-        }
-
-        .header-divider {
-            width: 1350px;
+        /* Linha Separadora do Cabeçalho */
+        .separator-line-header {
+            width: 1300px;
             height: 0px;
-            left: 50px;
-            top: 197px;
+            left: 130px;
+            top: 200px;
             position: absolute;
             outline: 2px black solid;
             outline-offset: -1px;
         }
 
-        /* Estilos dos Painéis de Pesquisa */
-        .research-panel {
-            width: 583px;
-            height: 1403px;
+        /* Conteúdo Principal */
+        .main-content {
+            position: relative;
+        }
+
+
+        .content-card {
             position: absolute;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-
-        .research-panel-left {
-            left: 105px;
-            top: 306px;
-        }
-
-        .research-panel-right {
-            left: 787px;
-            top: 306px;
-        }
-
-        .research-panel-bg {
-            width: 100%;
-            height: 100%;
-            left: 0px;
-            top: 0px;
-            position: absolute;
+            height: 1403px; /* Nova altura dos cards */
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 35px;
-            border: 1px solid; /* A cor da borda será definida nas classes específicas */
+            box-sizing: border-box;
         }
 
-        .research-panel-left .research-panel-bg {
+        .content-card-1 {
+            width: 583px;
+            left: 130px;
+            top: 306px;
             background: #FFF2FF;
-            border-color: #CEC6CE;
+            border: 1px #CEC6CE solid;
         }
 
-        .research-panel-right .research-panel-bg {
+        .content-card-2 {
+            width: 583px;
+            left: 751px;
+            top: 306px;
             background: #D6E6F0;
-            border-color: #C3CFD6;
+            border: 1px #C3CFD6 solid;
         }
 
-        .research-title-wrapper {
+        .title-wrapper {
             position: absolute;
-            height: 140.90px;
-            top: 0px;
-            text-align: center;
             display: flex;
-            justify-content: center;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 140.90px;
+            top: 0px; /* Título no topo do card */
+        }
+        .title-wrapper-1 {
+            width: 457.25px;
+            left: 62px;
+        }
+        .title-wrapper-2 {
+            width: 545.28px;
+            left: 24.85px;
+        }
+
+        .content-title {
             font-size: 24px;
             font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
+            margin: 0;
+        }
+        .content-title.title-card-1 { color: #6A09A2; }
+        .content-title.title-card-2 { color: #423B76; }
+
+        .title-link {
+            color: inherit; /* Faz o link herdar a cor do elemento pai (o h2, que já tem a cor definida por .title-card-1) */
+            text-decoration: none; /* Remove o sublinhado padrão dos links */
         }
 
-        .research-title-wrapper.left {
-            width: 457.25px;
-            left: 62px;
-            color: #6A09A2;
+        .title-link:hover,
+        .title-link:focus {
+            text-decoration: underline; /* Opcional: adiciona sublinhado no hover/focus para melhor usabilidade */
+        /* Você pode adicionar outros estilos de hover aqui, se desejar */
         }
 
-        .research-title-wrapper.right {
-            width: 545.28px;
-            left: 24.85px;
-            color: #423B76;
-        }
-
-        .research-image {
+        .content-image {
             position: absolute;
-            border-radius: 57px; /* A borda será ajustada nas classes específicas */
         }
-
-        .research-image.left {
-            width: 510px;
-            height: 505px;
-            left: 36px;
-            top: 127px;
-            border-radius: 57px;
-        }
-
-        .research-image.right {
-            width: 494px;
-            height: 513px;
-            left: 48px;
-            top: 140px;
-            border-radius: 41px; /* Diferente do painel esquerdo */
-        }
-
-        .research-text {
-            position: absolute;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            color: black;
-            font-size: 18px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-
-        .research-text.left {
-            width: 510px;
-            height: 699.08px;
-            left: 36px;
-            top: 666.21px;
-        }
-
-        .research-text.right {
-            width: 501.19px;
-            height: 679.70px;
-            left: 40.39px;
-            top: 694.25px;
-        }
-
+        
         /* Título da Seção de Pesquisa */
         .research-topics-box {
             width: 293px;
             height: 54px;
-            left: 90px;
+            left: 130px;
             top: 220px;
             position: absolute;
             background: rgba(208, 228, 205, 0.47);
@@ -259,117 +175,162 @@
             font-weight: 400;
             word-wrap: break-word;
         }
+        .content-image-1 {
+            width: 510px;
+            height: 505px;
+            left: 36px;
+            top: 127px; /* Posição da imagem dentro do card 1 */
+            border-radius: 57px;
+        }
+        .content-image-2 {
+            width: 494px;
+            height: 513px;
+            left: 48px;
+            top: 140px; /* Posição da imagem dentro do card 2 */
+            border-radius: 41px;
+        }
 
-        /* Estilos do Footer */
-        .footer-wrapper {
-            width: 1350px;
+        .text-wrapper {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .text-wrapper-1 {
+            width: 510px;
+            height: 699.08px;
+            left: 36px;
+            top: 666.21px; /* Posição do texto abaixo da imagem no card 1 */
+        }
+        .text-wrapper-2 {
+            width: 501.19px;
+            height: 679.70px;
+            left: 40.39px;
+            top: 694.25px; /* Posição do texto abaixo da imagem no card 2 */
+        }
+
+        .content-text {
+            font-size: 18px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+            color: black;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Rodapé */
+        .site-footer {
+            width: 1300px;
             height: 71px;
-            left: 16px;
-            top: 1729px; /* Ajustado para ficar abaixo dos painéis */
+            left: 127px;
+            top: 1731px; /* Nova posição do rodapé */
             position: absolute;
         }
 
-        .footer-divider {
-            width: 1344px;
+        .footer-separator {
+            width: 100%;
             height: 0px;
-            left: 38px;
-            top: 2px;
+            left: 0px;
+            top: 4px;
             position: absolute;
             outline: 2px black solid;
             outline-offset: -1px;
         }
 
         .footer-logo {
-            width: 65px;
-            height: 65px;
-            left: 564px;
-            top: 13px;
+            width: 71px;
+            height: 71px;
+            left: 478px;
+            top: 10px;
             position: absolute;
             border-radius: 64px;
         }
 
-        .footer-copyright {
-            width: 66.34px;
-            height: 47px;
-            left: 661px;
-            top: 18px;
+        .copyright-wrapper {
             position: absolute;
-            text-align: center;
+            width: 57px;
+            height: 47px;
+            left: 561px;
+            top: 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            color: black;
+            align-items: center;
+            text-align: center;
+        }
+        .copyright-text {
             font-size: 12px;
             font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
+            color: black;
+            margin: 0;
         }
 
-        .footer-instagram-icon {
-            width: 30px;
-            height: 30px;
-            left: 759px;
+        .footer-icon {
+            width: 18px;
+            height: 18px;
+            left: 633px;
             top: 27px;
             position: absolute;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img class="header-logo" src="https://placehold.co/230x176" alt="Logo" />
+    <div class="page-container">
+        <header class="site-header">
+            <img class="logo" src="../static/img_head_foot/logo.png" alt="Logotipo da Empresa" />
+            <nav class="navigation">
+                <a href="{{ url_for('home') }}" class="nav-item nav-home">Home</a>
+                <a href="{{ url_for('research') }}" class="nav-item nav-research">Research</a>
+                <a href="{{ url_for('team') }}" class="nav-item nav-our-team">Our Team</a>
+                <a href="{{ url_for('publications') }}" class="nav-item nav-publications">Publications</a>
+                <a href="{{ url_for('awards') }}" class="nav-item nav-awards">Awards</a>
+                <a href="{{ url_for('join_us') }}" class="nav-item nav-join-us">Join Us</a>
+            </nav>
+        </header>
 
-        <div class="nav-item nav-home">
-            <div class="nav-item-text">Home</div>
-        </div>
-        <div class="nav-item nav-research">
-            <div class="nav-item-text">Research</div>
-        </div>
-        <div class="nav-item nav-join-us">
-            <div class="nav-item-text">Join Us</div>
-        </div>
-        <div class="nav-item nav-our-team">
-            <div class="nav-item-text">Our Team</div>
-        </div>
-        <div class="nav-item nav-awards">
-            <div class="nav-item-text">Awards</div>
-        </div>
-        <div class="nav-item nav-publications">
-            <div class="nav-item-text">Publications</div>
-        </div>
-
-        <div class="header-divider"></div>
+        <div class="separator-line-header"></div>
 
         <div class="research-topics-box"></div>
         <div class="research-topics-title">Research Topics</div>
 
-        <div class="research-panel research-panel-left">
-            <div class="research-panel-bg"></div>
-            <div class="research-title-wrapper left">
-                Adoptive Cell Therapies and Epigenetic Modulation
+        <main class="main-content">
+            <section class="content-card content-card-1">
+            <div class="title-wrapper title-wrapper-1">
+            <h2 class="content-title title-card-1">
+                <a href="{{ url_for('act') }}" class="title-link">Adoptive Cell Therapies and Epigenetic Modulation</a>
+            </h2>
             </div>
-            <img class="research-image left" src="https://placehold.co/510x505" alt="Adoptive Cell Therapies Image" />
-            <div class="research-text left">
-                This research line focuses on enhancing adoptive cell therapies (ACTs), such as chimeric antigen receptor T cells (CAR-T) and tumor-infiltrating lymphocytes (TILs), through the modulation of epigenetic mechanisms. These advanced therapeutic strategies utilize the patient’s own immune cells, which are expanded or genetically engineered ex vivo and reinfused to target and eliminate cancer cells.<br/><br/>Our work aims to investigate how epigenetic regulation—heritable changes in gene expression that do not involve alterations to the DNA sequence—can be leveraged to improve the functionality, persistence, and antitumor efficacy of adoptive therapies. By modulating transcriptional pro grams, we seek to overcome tumor-induced immunosuppression and cellular exhaustion, which are major barriers to ACT success in solid tumors.<br/><br/>This research involves both molecular profiling and functional assays to identify key epigenetic targets that enhance the therapeutic potential of immune cells. Ultimately, our goal is to integrate epigenetic modulation into the design of next-generation adoptive immunotherapies, contributing to more durable and effective treatment options for cancer patients.<br/>
+            <img class="content-image content-image-1" src="../static/img_research/pesquisa1.png" alt="Imagem sobre Terapias Celulares Adotivas" />
+            <div class="text-wrapper text-wrapper-1">
+            <p class="content-text">This research line focuses on enhancing adoptive cell therapies (ACTs), such as chimeric antigen receptor T cells (CAR-T) and tumor-infiltrating lymphocytes (TILs), through the modulation of epigenetic mechanisms. These advanced therapeutic strategies utilize the patient’s own immune cells, which are expanded or genetically engineered ex vivo and reinfused to target and eliminate cancer cells.<br/><br/>Our work aims to investigate how epigenetic regulation—heritable changes in gene expression that do not involve alterations to the DNA sequence—can be leveraged to improve the functionality, persistence, and antitumor efficacy of adoptive therapies. By modulating transcriptional pro grams, we seek to overcome tumor-induced immunosuppression and cellular exhaustion, which are major barriers to ACT success in solid tumors.<br/><br/>This research involves both molecular profiling and functional assays to identify key epigenetic targets that enhance the therapeutic potential of immune cells. Ultimately, our goal is to integrate epigenetic modulation into the design of next-generation adoptive immunotherapies, contributing to more durable and effective treatment options for cancer patients.<br/></p>
             </div>
-        </div>
+        </section>
+        </main>
+            <section class="content-card content-card-2">
+                <div class="title-wrapper title-wrapper-2">
+                <h2 class="content-title title-card-2">
+                    <a href="{{ url_for('tls') }}" class="title-link">Tertiary Lymphoid Structures and the Tumor Immune Landscape</a>
+                </h2>
+                </div>
+                <img class="content-image content-image-2" src="../static/img_research/pesquisa2.png" alt="Imagem sobre Estruturas Linfoides Terciárias" />
+                <div class="text-wrapper text-wrapper-2">
+                    <p class="content-text">This research line investigates the spatial organization of immune cells within the tumor microenvironment, with a particular focus on tertiary lymphoid structures (TLS). These ectopic lymphoid aggregates resemble secondary lymphoid organs and are associated with improved immune responses in several cancer types.<br/><br/>We aim to understand how immune cells coordinate locally to mount effective antitumor responses and how the presence, composition, and maturation of TLS correlate with patient outcomes, particularly in the context of immunotherapy. By characterizing these structures in solid tumors, we seek to identify immunological and molecular signatures that can serve as predictive biomarkers for treatment response.<br/><br/>Our studies combine virtual microscopy, immunohistochemistry, virtual microscopy, and spatial analysis to map immune infiltration and TLS formation in patient samples. These insights contribute to a better understanding of tumor-immune interactions and support the development of therapeutic strategies that promote TLS formation or enhance their function, potentially improving the efficacy of immune checkpoint inhibitors and other immunotherapies.architecture of their tumors.<br/></p>
+                </div>
+            </section>
+        </main>
 
-        <div class="research-panel research-panel-right">
-            <div class="research-panel-bg"></div>
-            <div class="research-title-wrapper right">
-                Tertiary Lymphoid Structures and the Tumor Immune Landscape
+        <footer class="site-footer">
+            <div class="footer-separator"></div>
+            <img class="footer-logo" src="../static/img_head_foot/iconeMedinaLab.png" alt="Logotipo do Rodapé" />
+            <div class="copyright-wrapper">
+                 <p class="copyright-text">© 2025 All Rights Reserved </p>
             </div>
-            <img class="research-image right" src="https://placehold.co/494x513" alt="Tertiary Lymphoid Structures Image" />
-            <div class="research-text right">
-                This research line investigates the spatial organization of immune cells within the tumor microenvironment, with a particular focus on tertiary lymphoid structures (TLS). These ectopic lymphoid aggregates resemble secondary lymphoid organs and are associated with improved immune responses in several cancer types.<br/><br/>We aim to understand how immune cells coordinate locally to mount effective antitumor responses and how the presence, composition, and maturation of TLS correlate with patient outcomes, particularly in the context of immunotherapy. By characterizing these structures in solid tumors, we seek to identify immunological and molecular signatures that can serve as predictive biomarkers for treatment response.<br/><br/>Our studies combine virtual microscopy, immunohistochemistry, virtual microscopy, and spatial analysis to map immune infiltration and TLS formation in patient samples. These insights contribute to a better understanding of tumor-immune interactions and support the development of therapeutic strategies that promote TLS formation or enhance their function, potentially improving the efficacy of immune checkpoint inhibitors and other immunotherapies.architecture of their tumors.<br/>
-            </div>
-        </div>
-
-        <div class="footer-wrapper">
-            <div class="footer-divider"></div>
-            <img class="footer-logo" src="https://placehold.co/65x65" alt="Footer Logo" />
-            <div class="footer-copyright">© 2025 All Rights Reserved </div>
-            <img class="footer-instagram-icon" src="https://placehold.co/30x30" alt="Instagram Icon" />
-        </div>
+            <img class="footer-icon" src="../static/img_head_foot/icone_instagram.png" alt="Ícone" />
+        </footer>
     </div>
 </body>
 </html>

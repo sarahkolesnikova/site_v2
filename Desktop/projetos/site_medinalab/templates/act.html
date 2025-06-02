@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adoptive Cell Therapies</title>
+    <title>Research</title>
     <style>
         body, html {
             height: 100%;
             margin: 0;
-            font-family: Kokoro, sans-serif; /* Fonte padrão para a página */
+            font-family: Kokoro, sans-serif; 
         }
 
-        .page-container {
+        .container {
             width: 100%;
-            height: 100%;
+            height: 100%; 
             position: relative;
             background: white;
             overflow-y: auto;
@@ -22,7 +22,7 @@
 
         /* Cabeçalho e Logo */
         .site-header {
-            position: relative; /* Contexto para elementos filhos posicionados absolutamente */
+            position: relative;
         }
 
         .logo {
@@ -34,30 +34,38 @@
             border-radius: 64px;
         }
 
-        /* Navegação Principal */
+        /* Navegação */
         .navigation {
-            /* Contêiner lógico para os links de navegação */
+            /* Contêiner lógico para os links */
         }
 
-        .nav-link { /* Estilos base comuns para os links de navegação */
+        .navigation {
+            /* O contêiner de navegação em si não precisa de posicionamento se os links são posicionados individualmente */
+        }
+
+        .nav-item {
             position: absolute;
+            height: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 24px;
-            font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             text-decoration: none;
         }
-        /* Os estilos específicos de posicionamento (left, top, width, height) e cor
-           permanecerão inline nas tags <a> da navegação no corpo do HTML para garantir a precisão
-           do layout complexo original. */
 
-        /* Linha Separadora */
+        .nav-home { width: 94px; left: 462px; top: 125px; color: #6A09A2; }
+        .nav-research { width: 110px; left: 589px; top: 125px; color: #52894D; }
+        .nav-our-team { width: 126px; left: 730px; top: 125px; color: #6A09A2; }
+        .nav-publications { width: 140px; left: 875px; top: 125px; color: #52894D; }
+        .nav-awards { width: 98px; left: 1048px; top: 125px; color: #6A09A2; }
+        .nav-join-us { width: 111px; left: 1179px; top: 125px; color: #52894D; }
+
+        /* Linha Separadora do Cabeçalho */
         .separator-line-header {
-            width: 1160px;
+            width: 1300px;
             height: 0px;
             left: 130px;
             top: 200px;
@@ -66,243 +74,259 @@
             outline-offset: -1px;
         }
 
-        /* Conteúdo Principal */
-        .main-content {
-            position: relative;
+        /* Estilos dos Painéis de Pesquisa */
+        .research-panel {
+            position: absolute;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .content-card {
-            position: absolute; /* Posicionado em relação ao .page-container */
+        .research-panel-left {
+            width: 588px;
+            height: 1001px;
+            left: 97px;
+            top: 299px;
+        }
+
+        .research-panel-right {
+            width: 598px;
+            height: 1001px;
+            left: 751px;
+            top: 299px;
+        }
+
+        .research-panel-bg {
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            position: absolute;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 35px;
-            box-sizing: border-box;
+            border: 1px solid; /* A cor da borda será definida nas classes específicas */
         }
 
-        .content-card-1 {
-            width: 1188px;
-            height: 414px;
-            left: 122px;
-            top: 281px;
+        .research-panel-left .research-panel-bg {
             background: #FFF2FF;
-            border: 1px #CEC6CE solid;
+            border-color: #CEC6CE;
         }
 
-        .content-card-2 {
-            width: 1188px;
-            height: 462px;
-            left: 130px;
-            top: 768px;
+        .research-panel-right .research-panel-bg {
             background: #D6E6F0;
-            border: 1px #C3CFD6 solid;
+            border-color: #C3CFD6;
         }
 
-        /* Wrapper para Títulos dentro dos Cards */
-        .title-wrapper {
-            position: absolute; /* Posicionado dentro do .content-card */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center; /* Para o h2/a dentro */
-        }
-        .title-wrapper-1 {
-            width: 949.79px;
-            height: 41.58px;
-            left: 121.73px;
-            top: 16.63px;
-        }
-        .title-wrapper-2 {
-            width: 986px;
-            height: 46.87px;
-            left: 101px;
-            top: 47.99px;
-        }
-
-        .content-title { /* Estilos para o h2 */
+        .research-item-title {
+            position: absolute;
+            text-align: center;
             font-size: 24px;
             font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
-            margin: 0;
-            width: 100%; /* Para o h2 preencher o wrapper */
-        }
-        .content-title-1 { color: #6A09A2; }
-        .content-title-2 { color: #6A09A2; }
-
-        /* Imagens dentro dos Cards */
-        .content-image {
-            position: absolute; /* Posicionado dentro do .content-card */
-            border-radius: 19px;
-        }
-        .content-image-1 {
-            width: 355px;
-            height: 294px;
-            left: 59px;
-            top: 80px;
-        }
-        .content-image-2 {
-            width: 464px;
-            height: 341px;
-            left: 23px;
-            top: 101px;
+            color: #6A09A2; /* Cor comum para os títulos de pesquisa */
         }
 
-        /* Wrapper para Textos dentro dos Cards */
-        .text-wrapper {
-            position: absolute; /* Posicionado dentro do .content-card */
+        .research-item-title.left {
+            width: 371px;
+            height: 192px;
+            left: 159px;
+            top: 73px;
+        }
+
+        .research-item-title.right {
+            width: 381px;
+            height: 197px;
+            left: 171px;
+            top: 24px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .research-text {
+            position: absolute;
+            justify-content: center;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Para centralizar o <p> verticalmente */
             color: black;
+            font-size: 16px;
             font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
-            /* text-align: center; /* Adicione se o texto dentro do parágrafo também deve ser centralizado */
-        }
-        .text-wrapper-1 {
-            width: 557px;
-            height: 255px;
-            left: 441px;
-            top: 109px;
-            font-size: 16px;
-        }
-        .text-wrapper-2 {
-            width: 489px;
-            height: 339px;
-            left: 507px;
-            top: 118px;
-            font-size: 18px;
-        }
-        .content-text { /* <p> dentro do .text-wrapper */
-            margin: 0;
-            line-height: 1.6; /* Melhoria para legibilidade */
         }
 
-        /* Círculos Decorativos (agora são <img>) */
-        .decorative-circle {
-            position: absolute; /* Posicionado dentro do .content-card */
-            border-radius: 9999px; /* Para manter a forma circular se a imagem placeholder não for perfeitamente redonda */
-            width: 165px;
-            height: 165px;
-        }
-        .decorative-circle-1 {
-            left: 990px;
-            top: 144px;
-        }
-        .decorative-circle-2 {
-            left: 996px;
-            top: 189px;
+        .research-text.left {
+            width: 500px;
+            height: 312px;
+            left: 55px;
+            top: 617px;
         }
 
-        /* Rodapé */
-        .site-footer {
-            width: 1160px;
+        .research-text.right {
+            width: 465px;
+            height: 364px;
+            left: 64px;
+            top: 613px;
+            font-size: 18px; 
+        }
+
+        .research-main-image {
+            position: absolute;
+            border-radius: 19px;
+        }
+
+        .research-main-image.left {
+            width: 500px;
+            height: 319px;
+            left: 55px;
+            top: 248px;
+        }
+
+        .research-main-image.right {
+            width: 465px;
+            height: 328px;
+            left: 64px;
+            top: 235px;
+        }
+
+        .research-icon {
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            border-radius: 9999px; 
+        }
+
+        .research-icon.left {
+            left: 34px;
+            top: 73px;
+        }
+
+        .research-icon.right {
+            left: 46px;
+            top: 60px;
+        }
+
+        /* Título da Seção "Research in Development" */
+        .section-title-box {
+            width: 442px;
+            height: 54px;
+            left: 90px;
+            top: 220px;
+            position: absolute;
+            background: rgba(208, 228, 205, 0.47);
+            border-radius: 17px;
+        }
+
+        .section-title-text {
+            width: 427px;
+            height: 50px;
+            left: 105px;
+            top: 220px;
+            position: absolute;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            color: #43923D;
+            font-size: 32px;
+            font-family: Kokoro, sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        /* Estilos do Footer */
+        .footer-wrapper {
+            width: 1350px;
             height: 71px;
-            left: 136px;
-            top: 1255px;
+            left: 24px;
+            top: 1325px; 
             position: absolute;
         }
 
-        .footer-separator {
-            width: 100%; /* Relativo ao .site-footer */
+        .footer-divider {
+            width: 1344px;
             height: 0px;
-            left: 0px;
-            top: 4px;
+            left: 38px;
+            top: 2px;
             position: absolute;
             outline: 2px black solid;
             outline-offset: -1px;
         }
 
         .footer-logo {
-            width: 71px;
-            height: 71px;
-            left: 478px;
-            top: 10px;
+            width: 65px;
+            height: 65px;
+            left: 564px;
+            top: 13px;
             position: absolute;
             border-radius: 64px;
         }
 
-        .copyright-wrapper {
-            position: absolute;
-            width: 57px;
+        .footer-copyright {
+            width: 66.34px;
             height: 47px;
-            left: 561px;
-            top: 12px;
+            left: 661px;
+            top: 18px;
+            position: absolute;
+            text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .copyright-text {
+            color: black;
             font-size: 12px;
             font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
-            color: black;
-            margin: 0;
         }
 
-        .footer-icon {
-            width: 18px;
-            height: 18px;
-            left: 633px;
+        .footer-instagram-icon {
+            width: 30px;
+            height: 30px;
+            left: 759px;
             top: 27px;
             position: absolute;
         }
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <header class="site-header">
-            <img class="logo" src="../static/logo.jpg" alt="Logotipo Principal" />
+    <div class="container">
+         <header class="site-header">
+            <img class="logo" src="../static/img_head_foot/logo.png" alt="Logotipo da Empresa" />
             <nav class="navigation">
-                <a href="{{ url_for('home') }}" class="nav-link" style="width: 94px; height: 35px; left: 462px; top: 125px; color: #6A09A2;">Home</a>
-                <a href="{{ url_for('research') }}" class="nav-link" style="width: 110px; height: 35px; left: 589px; top: 125px; color: #52894D;">Research</a>
-                <a href="{{ url_for('join_us') }}" class="nav-link" style="width: 111px; height: 35px; left: 1179px; top: 125px; color: #52894D;">Join Us</a>
-                <a href="{{ url_for('team') }}" class="nav-link" style="width: 120px; height: 35px; left: 725px; top: 125px; color: #6A09A2;">Our Team</a>
-                <a href="{{ url_for('awards') }}" class="nav-link" style="width: 98px; height: 35px; left: 1048px; top: 125px; color: #6A09A2;">Awards</a>
-                <a href="{{ url_for('publications') }}" class="nav-link" style="width: 140px; height: 35px; left: 875px; top: 125px; color: #52894D;">Publications</a>
+                <a href="{{ url_for('home') }}" class="nav-item nav-home">Home</a>
+                <a href="{{ url_for('research') }}" class="nav-item nav-research">Research</a>
+                <a href="{{ url_for('team') }}" class="nav-item nav-our-team">Our Team</a>
+                <a href="{{ url_for('publications') }}" class="nav-item nav-publications">Publications</a>
+                <a href="{{ url_for('awards') }}" class="nav-item nav-awards">Awards</a>
+                <a href="{{ url_for('join_us') }}" class="nav-item nav-join-us">Join Us</a>
             </nav>
         </header>
-
         <div class="separator-line-header"></div>
 
-        <main class="main-content">
-            <section class="content-card content-card-1">
-                <div class="title-wrapper title-wrapper-1">
-                    <h2 class="content-title content-title-1">
-                        <class="title-link">CBP/p300 inhibition to enhance CAR-T cell functionality: implications in hematologic malignancies and solid tumors
-                    </h2>
-                </div>
-                <img class="content-image content-image-1" src="../static/leticia_pesq.png" alt="Imagem CBP/p300 inhibition" />
-                <div class="text-wrapper text-wrapper-1">
-                    <p class="content-text">This project investigates epigenetic strategies to improve the therapeutic performance of CAR-T cells against hematologic malignancies and solid tumors. The research focuses on targeting the CBP/p300 complex, an epigenetic regulator involved in T cell differentiation and function. By pharmacologically or genetically modulating this complex during CAR-T cell manufacturing, the aim is to promote memory-like and stem-like features associated with improved clinical outcomes. CAR-T cells are evaluated using molecular profiling, immunophenotyping, and functional assays in both in vitro and in vivo models, particularly in HER2+ ovarian cancer. The findings aim to expand the therapeutic scope of CAR-T cell applications.</p>
-                </div>
-                <img class="decorative-circle decorative-circle-1" src="../static/Leticia.svg" alt="Círculo Decorativo 1" />
-            </section>
+        <div class="section-title-box"></div>
+        <div class="section-title-text">Research in Development</div>
 
-            <section class="content-card content-card-2">
-                <div class="title-wrapper title-wrapper-2">
-                    <h2 class="content-title content-title-2">
-                        <class="title-link">Modulation of epigenetic targets to enhance the antitumor response of T lymphocytes
-                    </h2>
-                </div>
-                <img class="content-image content-image-2" src="https://placehold.co/464x341" alt="Imagem Modulação de alvos epigenéticos" />
-                <div class="text-wrapper text-wrapper-2">
-                    <p class="content-text">Julianna's research focuses on the role of epigenetic regulation in reprogramming tumor-infiltrating lymphocytes (TILs) to improve their function within the tumor microenvironment. The project aims to identify and modulate epigenetic targets that can reverse T cell exhaustion, restore cytotoxic activity, and enhance tumor antigen recognition. By integrating transcriptomic analyses and functional assays, the study seeks to advance the development of strategies that potentiate TIL-based immunotherapies, especially in solid tumors that are resistant to current treatments.</p>
-                </div>
-                <img class="decorative-circle decorative-circle-2" src="https://placehold.co/165x165" alt="Círculo Decorativo 2" />
-            </section>
-        </main>
+        <div class="research-panel research-panel-left">
+            <div class="research-panel-bg"></div>
+            <img class="research-icon left" src="../static/img_research/Leticia.svg" alt="Research Icon" />
+            <div class="research-item-title left">CBP/p300 inhibition to enhance CAR-T cell functionality: implications in hematologic malignancies and solid tumors</div>
+            <img class="research-main-image left" src="../static/img_research/leticia.png" alt="CBP/p300 Research Image" />
+            <div class="research-text left">This project investigates epigenetic strategies to improve the therapeutic performance of CAR-T cells against hematologic malignancies and solid tumors. The research focuses on targeting the CBP/p300 complex, an epigenetic regulator involved in T cell differentiation and function. By pharmacologically or genetically modulating this complex during CAR-T cell manufacturing, the aim is to promote memory-like and stem-like features associated with improved clinical outcomes. CAR-T cells are evaluated using molecular profiling, immunophenotyping, and functional assays in both in vitro and in vivo models, particularly in HER2+ ovarian cancer. The findings aim to expand the therapeutic scope of CAR-T cell applications.</div>
+        </div>
 
-        <footer class="site-footer">
-            <div class="footer-separator"></div>
-            <img class="footer-logo" src="../static/icone_MedinaLab.png" alt="Logotipo do Rodapé" />
-            <div class="copyright-wrapper">
-                 <p class="copyright-text">© 2025 All Rights Reserved </p>
-            </div>
-            <img class="footer-icon" src="../static/icon-instagram.png" alt="Ícone do Rodapé" />
-        </footer>
+        <div class="research-panel research-panel-right">
+            <div class="research-panel-bg"></div>
+            <img class="research-icon right" src="../static/img_research/Julianna.svg" alt="Research Icon" />
+            <div class="research-item-title right">Modulation of epigenetic targets to enhance the antitumor response of T lymphocytes</div>
+            <img class="research-main-image right" src="../static/img_research/til julianna.png" alt="Epigenetic Targets Research Image" />
+            <div class="research-text right">Julianna's research focuses on the role of epigenetic regulation in reprogramming tumor-infiltrating lymphocytes (TILs) to improve their function within the tumor microenvironment. The project aims to identify and modulate epigenetic targets that can reverse T cell exhaustion, restore cytotoxic activity, and enhance tumor antigen recognition. By integrating transcriptomic analyses and functional assays, the study seeks to advance the development of strategies that potentiate TIL-based immunotherapies, especially in solid tumors that are resistant to current treatments.</div>
+        </div>
+
+        <div class="footer-wrapper">
+            <div class="footer-divider"></div>
+            <img class="footer-logo" src="../static/img_head_foot/iconeMedinaLab.png" alt="Footer Logo" />
+            <div class="footer-copyright">© 2025 All Rights Reserved </div>
+            <img class="footer-instagram-icon" src="../static/img_head_foot/icone_instagram.png" alt="Instagram Icon" />
+        </div>
     </div>
 </body>
 </html>
