@@ -106,7 +106,7 @@
         }
 
         .header-divider {
-            width: 1350px;
+            width: 1400px;
             height: 0px;
             left: 50px;
             top: 197px;
@@ -125,9 +125,9 @@
         }
 
         .footer-divider {
-            width: 1344px;
+            width: 1400px;
             height: 0px;
-            left: 38px;
+            left: 50px;
             top: 2px;
             position: absolute;
             outline: 2px black solid;

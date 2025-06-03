@@ -37,4 +37,4 @@ def join_us():
     return render_template('join_us.html', page_title='Join Us')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
