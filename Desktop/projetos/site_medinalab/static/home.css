@@ -137,7 +137,7 @@
         .footer-logo {
             width: 65px;
             height: 65px;
-            left: 564px;
+            left: 610px;
             top: 13px;
             position: absolute;
             border-radius: 64px;
@@ -146,7 +146,7 @@
         .footer-copyright {
             width: 66.34px;
             height: 47px;
-            left: 661px;
+            left: 720px;
             top: 18px;
             position: absolute;
             text-align: center;
@@ -163,7 +163,7 @@
         .footer-instagram-icon {
             width: 30px;
             height: 30px;
-            left: 759px;
+            left: 831px;
             top: 27px;
             position: absolute;
         }
@@ -206,16 +206,19 @@
         .mission-text-part1 {
             height: 89px;
             top: 702px;
+            text-indent: 50px;
         }
 
         .mission-text-part2 {
             height: 134px;
             top: 793px;
+            text-indent: 50px;
         }
 
         .mission-text-part3 {
             height: 79px;
             top: 913px;
+            text-indent: 50px;
         }
 
         .mission-title-box {
@@ -225,6 +228,7 @@
             top: 222px;
             position: absolute;
             background: #F5F5F5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 17px;
         }
 
@@ -243,6 +247,7 @@
             font-family: Kokoro, sans-serif;
             font-weight: 400;
             word-wrap: break-word;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
         /* Painel Lateral (Tiago Medina) */
