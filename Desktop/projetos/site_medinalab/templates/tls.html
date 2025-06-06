@@ -1,374 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: Kokoro, sans-serif; 
-        }
-
-        .page-container {
-            width: 100%;
-            height: 100%; 
-            position: relative;
-            background: white;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        /* Cabeçalho e Logo */
-        .site-header {
-            position: relative;
-        }
-
-        .logo {
-            width: 230px;
-            height: 230px;
-            left: 136px;
-            top: 0px;
-            position: absolute;
-            border-radius: 64px;
-        }
-
-        /* Navegação */
-        .navigation {
-            /* Contêiner lógico para os links */
-        }
-
-        .navigation {
-            /* O contêiner de navegação em si não precisa de posicionamento se os links são posicionados individualmente */
-        }
-
-        .nav-item {
-            position: absolute;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-weight: 400;
-            word-wrap: break-word;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            text-decoration: none;
-        }
-
-        .nav-home { width: 94px; left: 462px; top: 125px; color: #6A09A2; }
-        .nav-research { width: 110px; left: 589px; top: 125px; color: #52894D; }
-        .nav-our-team { width: 126px; left: 730px; top: 125px; color: #6A09A2; }
-        .nav-publications { width: 140px; left: 875px; top: 125px; color: #52894D; }
-        .nav-awards { width: 98px; left: 1048px; top: 125px; color: #6A09A2; }
-        .nav-join-us { width: 111px; left: 1179px; top: 125px; color: #52894D; }
-
-        /* Linha Separadora do Cabeçalho */
-        .separator-line-header {
-            width: 1300px;
-            height: 0px;
-            left: 130px;
-            top: 200px;
-            position: absolute;
-            outline: 2px black solid;
-            outline-offset: -1px;
-        }
-        /* Card 1: Emmanuel */
-        .card1-container {
-            width: 577px;
-            height: 973px;
-            left: 823px;
-            top: 318px;
-            position: absolute;
-        }
-        .card1-background {
-            width: 577px;
-            height: 973px;
-            left: 0px;
-            top: 0px;
-            position: absolute;
-            background: #D0E4CD;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 35px;
-            border: 1px #93A791 solid;
-        }
-        .card1-title {
-            width: 364.06px;
-            height: 186.63px;
-            left: 155.47px;
-            top: 69.99px;
-            position: absolute;
-            text-align: center;
-            color: #6A09A2;
-            font-size: 24px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .card1-description {
-            width: 496.91px;
-            height: 303.27px;
-            left: 48.24px;
-            top: 598.77px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: rgba(0, 0, 0, 0.83);
-            font-size: 18px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .card1-image {
-            width: 491.13px;
-            height: 310.08px;
-            left: 48.24px;
-            top: 240.09px;
-            position: absolute;
-            border-radius: 19px;
-        }
-        .card1-profile-img {
-            width: 120.61px;
-            height: 121.50px;
-            left: 34.74px;
-            top: 70.96px;
-            position: absolute;
-            border-radius: 62.50px;
-        }
-
-        /* Card 2: Raylane */
-        .card2-container {
-            width: 558px;
-            height: 973px;
-            left: 180px;
-            top: 318px;
-            position: absolute;
-        }
-        .card2-background {
-            width: 558px;
-            height: 973px;
-            left: 0px;
-            top: 0px;
-            position: absolute;
-            background: #FFF2FF;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 35px;
-            border: 1px #CEC6CE solid;
-        }
-        .card2-title {
-            width: 352.07px;
-            height: 186.63px;
-            left: 138.55px;
-            top: 69.99px;
-            position: absolute;
-            text-align: center;
-            color: #6A09A2;
-            font-size: 24px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .card2-description {
-            width: 450.77px;
-            height: 303.27px;
-            left: 46.50px;
-            top: 598.77px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: black;
-            font-size: 18px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .card2-image {
-            width: 450.77px;
-            height: 310.08px;
-            left: 46.50px;
-            top: 240.09px;
-            position: absolute;
-            border-radius: 19px;
-        }
-        .card2-profile-img {
-            width: 118.62px;
-            height: 121.50px;
-            left: 19.93px;
-            top: 69.99px;
-            position: absolute;
-            border-radius: 87.50px;
-        }
-
-        /* Card 3: Maria Luisa */
-        .card3-container {
-            width: 558px;
-            height: 966px;
-            left: 501px;
-            top: 1350px;
-            position: absolute;
-        }
-        .card3-background {
-            width: 558px;
-            height: 1082.77px; /* Note: A altura é maior que o container pai */
-            left: 0px;
-            top: 0px;
-            position: absolute;
-            background: #D6E6F0;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 35px;
-            border: 1px #C3CFD6 solid;
-        }
-        .card3-title {
-            width: 375.11px;
-            height: 190.11px;
-            left: 140.90px;
-            top: 40.53px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: #6A09A2;
-            font-size: 24px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .card3-image {
-            width: 306px;
-            height: 316.53px;
-            left: 126px;
-            top: 262.49px;
-            position: absolute;
-            border-radius: 19px;
-        }
-        .card3-profile-img {
-            width: 116.64px;
-            height: 120.63px;
-            left: 42.92px;
-            top: 93.61px;
-            position: absolute;
-            border-radius: 9999px; /* Efetivamente um círculo */
-        }
-        .card3-description {
-            width: 452.56px;
-            height: 414px;
-            left: 57.85px;
-            top: 627.27px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: black;
-            font-size: 18px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        /* Rodapé */
-        .footer {
-            width: 1350px;
-            height: 71px;
-            left: 16px;
-            top: 2493px;
-            position: absolute;
-        }
-        .footer-line {
-            width: 1344px;
-            height: 0px;
-            left: 38px; 
-            top: 2px;  
-            position: absolute;
-            outline: 2px black solid;
-            outline-offset: -1px;
-        }
-        .footer-icon1 {
-            width: 65px;
-            height: 65px;
-            left: 610px; 
-            top: 13px;   
-            position: absolute;
-            border-radius: 64px;
-        }
-        .footer-copyright {
-            width: 66.34px;
-            height: 47px;
-            left: 720px; 
-            top: 18px;   
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: black;
-            font-size: 12px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .footer-icon2 {
-            width: 30px;
-            height: 30px;
-            left: 8px; 
-            top: 27px;   
-            position: absolute;
-        }
-
-        /* Banner "Research in Development" */
-        .research-banner-background {
-            width: 460px;
-            height: 54px;
-            left: 140px;
-            top: 225px;
-            position: absolute;
-            background: rgba(214, 230, 240, 0.80);
-            border-radius: 17px;
-        }
-        .research-banner-text {
-            width: 420px;
-            height: 50px;
-            left: 155px;
-            top: 225px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: #145278;
-            font-size: 32px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/tls.css">
+    <title>TLS</title>
 </head>
 <body>
     <div class="container">
-         <header class="site-header">
-            <img class="logo" src="../static/img_head_foot/logo.png" alt="Logotipo da Empresa" />
-            <nav class="navigation">
-                <a href="{{ url_for('home') }}" class="nav-item nav-home">Home</a>
-                <a href="{{ url_for('research') }}" class="nav-item nav-research">Research</a>
-                <a href="{{ url_for('team') }}" class="nav-item nav-our-team">Our Team</a>
-                <a href="{{ url_for('publications') }}" class="nav-item nav-publications">Publications</a>
-                <a href="{{ url_for('awards') }}" class="nav-item nav-awards">Awards</a>
-                <a href="{{ url_for('join_us') }}" class="nav-item nav-join-us">Join Us</a>
-            </nav>
-        </header>
-        <div class="separator-line-header"></div>
-        <div class="card1-container">
-            <div class="card1-background"></div>
-            <div class="card1-title">Antitumor potential of CD39⁺ T cells in clear cell renal cell carcinoma</div>
-            <img class="card1-profile-img" src="../static/tls/emmanuel.png" />
-            <img class="card1-image" src="../static/tls/emmanuel_pesq.png" />
-            <div class="card1-description">Emmanuel investigates the role of CD39⁺ T cells within tertiary lymphoid structures (TLS) in patients with clear cell renal cell carcinoma (ccRCC). Previous analyses revealed that CD39⁺CXCL13⁺ T cells are polyclonal, spatially organized in TLS, and exhibit an exhausted phenotype resembling tumor-specific T cells. His project seeks to deeply characterize the transcriptional and phenotypic profile of these T cells and their interactions with B cells. Functional assays evaluate their proliferation, cytotoxic potential, and response to tumor antigens. Additionally, the study assesses the association between TLS maturation and patient response to immunotherapy. The ultimate goal is to explore strategies to reverse T cell exhaustion and enhance antitumor immunity in ccRCC.</div>
+        <img class="header-logo" src="../static/img_head_foot/logo.png" alt="Logo" />
+
+        <div class="nav-item nav-home">
+            <a href="{{ url_for('home') }}" class="nav-text">Home</a>
+        </div>
+        <div class="nav-item nav-research">
+            <a href="{{ url_for('research') }}" class="nav-text">Research</a>
+        </div>
+        <div class="nav-item nav-join-us">
+            <a href="{{ url_for('join_us') }}" class="nav-text">Join Us</a>
+        </div>
+        <div class="nav-item nav-our-team">
+            <a href="{{ url_for('team') }}" class="nav-text">Our Team</a>
+        </div>
+        <div class="nav-item nav-awards">
+            <a href="{{ url_for('awards') }}" class="nav-text">Awards</a>
+        </div>
+        <div class="nav-item nav-publications">
+            <a href="{{ url_for('publications') }}" class="nav-text">Publications</a>
         </div>
 
+        <div class="header-divider"></div>
+
+        <div class="card1-container">
+            <div class="card1-background"></div>
+            <div class="card1-title1">Antitumor potential of CD39⁺ T cells in clear cell renal cell carcinoma</div>
+            <img class="card1-profile-img" src="../static/tls/emmanuel.png" />
+            <img class="card1-image" src="../static/tls/emmanuel_pesq.png" />
+            <div class="card1-description1">Emmanuel investigates the role of CD39⁺ T cells within tertiary lymphoid structures (TLS) in patients with clear cell renal cell carcino- ma (ccRCC). Previous analyses revealed that CD39⁺CXCL13⁺ T cells are polyclonal, spatially organized in TLS, and exhibit an exhausted phenotype resembling tumor-specific T cells.</div>
+            <div class="card1-description2">His project seeks to deeply characterize the transcriptional and phenotypic profile of these T cells and their interactions with B cells. Functional assays evaluate their proliferation, cytotoxic potential, and response to tumor antigens. Additionally, the study assesses the association between TLS maturation and patient response to immunotherapy. The ultimate goal is to explore strategies to reverse T cell exhaustion and enhance antitumor immunity in ccRCC.</div>
+            <div class="card1-box">
+            <div class="card1-box-title">Emmanuel V. O. Araújo, PHD Student</div>
+            </div>
+        </div>
         <div class="card2-container">
             <div class="card2-background"></div>
             <div class="card2-title">Therapeutic potential of germinal center B cells in clear cell renal cell carcinoma</div>
