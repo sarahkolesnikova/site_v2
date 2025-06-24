@@ -1,254 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: Kokoro, sans-serif; 
-        }
-
-        .container {
-            width: 100%;
-            height: 100%; 
-            position: relative;
-            background: white;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        /* Cabeçalho e Logo */
-        .site-header {
-            position: relative;
-        }
-
-        .logo {
-            width: 230px;
-            height: 230px;
-            left: 136px;
-            top: 0px;
-            position: absolute;
-            border-radius: 64px;
-        }
-
-        /* Navegação */
-        .navigation {
-            /* Contêiner lógico para os links */
-        }
-
-        .navigation {
-            /* O contêiner de navegação em si não precisa de posicionamento se os links são posicionados individualmente */
-        }
-
-        .nav-item {
-            position: absolute;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-weight: 400;
-            word-wrap: break-word;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            text-decoration: none;
-        }
-
-        .nav-home { width: 94px; left: 462px; top: 125px; color: #6A09A2; }
-        .nav-research { width: 110px; left: 589px; top: 125px; color: #52894D; }
-        .nav-our-team { width: 126px; left: 730px; top: 125px; color: #6A09A2; }
-        .nav-publications { width: 140px; left: 875px; top: 125px; color: #52894D; }
-        .nav-awards { width: 98px; left: 1048px; top: 125px; color: #6A09A2; }
-        .nav-join-us { width: 111px; left: 1179px; top: 125px; color: #52894D; }
-
-        /* Linha Separadora do Cabeçalho */
-        .separator-line-header {
-            width: 1400px;
-            height: 0px;
-            left: 50px;
-            top: 200px;
-            position: absolute;
-            outline: 2px black solid;
-            outline-offset: -1px;
-        }
-
-        /* Estilos Base para Cards de Prêmios */
-        .award-card-bg-base {
-            position: absolute;
-            background: #F5F5F5;
-            border-radius: 40px;
-            width: 447px; /* Largura comum */
-            left: 80px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        .award-year-text-base {
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: rgba(0, 0, 0, 0.83);
-            font-size: 28px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-            width: 115px;
-            height: 39px;
-            left: 80px; /* Posição comum */
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        .award-description-text-base {
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: black;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-
-        /* Prêmio 1 */
-        .award-1-bg { height: 181px; left: 526px; top: 332px; }
-        .award-1-year { left: 692px; top: 342px;}
-        .award-1-desc { width: 387px; left: 556px; top: 385px; font-size: 20px; }
-
-        /* Prêmio 2 */
-        .award-2-bg { height: 181px; left: 989px; top: 332px; }
-        .award-2-year { left: 1157px; top: 341px; }
-        .award-2-desc { width: 387px; left: 1019px; top: 385px; font-size: 20px; }
-
-        /* Prêmio 3 */
-        .award-3-bg { height: 181px; left: 63px; top: 332px; }
-        .award-3-year { left: 219px; top: 347px; }
-        .award-3-desc { width: 421px; height: 147px; left: 76px; top: 371px; font-size: 20px; }
-
-        /* Prêmio 4 */
-        .award-4-bg { height: 181px; left: 63px; top: 537px; }
-        .award-4-year { left: 231px; top: 546px; }
-        .award-4-desc { width: 387px; left: 93px; top: 590px; font-size: 20px; }
-
-        /* Prêmio 5 */
-        .award-5-bg { height: 181px; left: 526px; top: 532px; }
-        .award-5-year { left: 694px; top: 541px; }
-        .award-5-desc { width: 402px; left: 549px; top: 580px; font-size: 20px; }
-
-        /* Prêmio 6 */
-        .award-6-bg { height: 181px; left: 989px; top: 532px; }
-        .award-6-year { left: 1157px; top: 541px; }
-        .award-6-desc { width: 421px; left: 1004px; top: 599px; font-size: 20px; }
-        
-        /* Prêmio 7 */
-        .award-7-bg { height: 198px; left: 63px; top: 737px; }
-        .award-7-year { left: 231px; top: 746px; }
-        .award-7-desc { width: 421px; left: 74px; top: 789px; font-size: 18px; }
-
-        /* Prêmio 8 */
-        .award-8-bg { height: 203px; left: 526px; top: 732px; }
-        .award-8-year { left: 694px; top: 741px; }
-        .award-8-desc { width: 361px; left: 565px; top: 789px; font-size: 20px; }
-
-        /* Prêmio 9 */
-        .award-9-bg { height: 203px; left: 989px; top: 732px; }
-        .award-9-year { left: 1157px; top: 741px; }
-        .award-9-desc { width: 421px; left: 1004px; top: 789px; font-size: 18px; }
-        /* Rodapé */
-        .footer-section {
-            width: 1400px;
-            height: 71px;
-            left: 16px;
-            top: 953px;
-            position: absolute;
-        }
-        .footer-line {
-            width: 1400px;
-            height: 0px;
-            left: 40px;
-            top: 2px;
-            position: absolute;
-            outline: 2px black solid;
-            outline-offset: -1px;
-        }
-        .footer-icon-1 {
-            width: 65px;
-            height: 65px;
-            left: 610px;
-            top: 13px;
-            position: absolute;
-            border-radius: 64px;
-        }
-        .footer-copyright {
-            width: 66.34px;
-            height: 47px;
-            left: 720px;
-            top: 18px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: black;
-            font-size: 12px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .footer-icon-2 {
-            width: 30px;
-            height: 30px;
-            left: 831px;
-            top: 27px;
-            position: absolute;
-        }
-
-        /* Banner "Our Awards" */
-        .our-awards-banner-bg {
-            width: 245px;
-            height: 54px;
-            left: 134px;
-            top: 230px;
-            position: absolute;
-            background: #F5F5F5;
-            border-radius: 17px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        .our-awards-banner-text {
-            width: 206px;
-            height: 50px;
-            left: 150px;
-            top: 232px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: rgba(0, 0, 0, 0.83);
-            font-size: 32px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/awards.css">
+    <title>Awards</title>
 </head>
 <body>
-        <div class="container">
-         <header class="site-header">
-            <img class="logo" src="../static/img_head_foot/logo.png" alt="Logotipo da Empresa" />
-            <nav class="navigation">
-                <a href="{{ url_for('home') }}" class="nav-item nav-home">Home</a>
-                <a href="{{ url_for('research') }}" class="nav-item nav-research">Research</a>
-                <a href="{{ url_for('team') }}" class="nav-item nav-our-team">Our Team</a>
-                <a href="{{ url_for('publications') }}" class="nav-item nav-publications">Publications</a>
-                <a href="{{ url_for('awards') }}" class="nav-item nav-awards">Awards</a>
-                <a href="{{ url_for('join_us') }}" class="nav-item nav-join-us">Join Us</a>
-            </nav>
-        </header>
-        <div class="separator-line-header"></div>
+    <div class="container">
+        <img class="header-logo" src="../static/img_head_foot/logo.png" alt="Logo" />
+
+        <div class="nav-item nav-home">
+            <a href="{{ url_for('home') }}" class="nav-text">Home</a>
+        </div>
+        <div class="nav-item nav-research">
+            <a href="{{ url_for('research') }}" class="nav-text">Research</a>
+        </div>
+        <div class="nav-item nav-join-us">
+            <a href="{{ url_for('join_us') }}" class="nav-text">Join Us</a>
+        </div>
+        <div class="nav-item nav-our-team">
+            <a href="{{ url_for('team') }}" class="nav-text">Our Team</a>
+        </div>
+        <div class="nav-item nav-awards">
+            <a href="{{ url_for('awards') }}" class="nav-text">Awards</a>
+        </div>
+        <div class="nav-item nav-publications">
+            <a href="{{ url_for('publications') }}" class="nav-text">Publications</a>
+        </div>
+
+    <div class="header-divider"></div>
 
         <div class="award-card-bg-base award-1-bg"></div>
         <div class="award-year-text-base award-1-year">2023</div>

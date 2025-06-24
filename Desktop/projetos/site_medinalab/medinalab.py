@@ -10,11 +10,11 @@ def home():
 
 @app.route('/research')
 def research():
-    return render_template('research1.html')
+    return render_template('research2.html')
 
 @app.route('/act')
 def act():
-    return render_template('act.html')
+    return render_template('act1.html')
 
 @app.route('/tls')
 def tls():

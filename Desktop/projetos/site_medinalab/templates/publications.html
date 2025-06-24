@@ -1,228 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: Kokoro, sans-serif; 
-        }
-
-        .container {
-            width: 100%;
-            height: 100%; 
-            position: relative;
-            background: white;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        /* Cabeçalho e Logo */
-        .site-header {
-            position: relative;
-        }
-
-        .logo {
-            width: 230px;
-            height: 230px;
-            left: 136px;
-            top: 0px;
-            position: absolute;
-            border-radius: 64px;
-        }
-
-        /* Navegação */
-        .navigation {
-            /* Contêiner lógico para os links */
-        }
-
-        .navigation {
-            /* O contêiner de navegação em si não precisa de posicionamento se os links são posicionados individualmente */
-        }
-
-        .nav-item {
-            position: absolute;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-weight: 400;
-            word-wrap: break-word;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            text-decoration: none;
-        }
-
-        .nav-home { width: 94px; left: 462px; top: 125px; color: #6A09A2; }
-        .nav-research { width: 110px; left: 589px; top: 125px; color: #52894D; }
-        .nav-our-team { width: 126px; left: 730px; top: 125px; color: #6A09A2; }
-        .nav-publications { width: 140px; left: 875px; top: 125px; color: #52894D; }
-        .nav-awards { width: 98px; left: 1048px; top: 125px; color: #6A09A2; }
-        .nav-join-us { width: 111px; left: 1179px; top: 125px; color: #52894D; }
-
-        /* Linha Separadora do Cabeçalho */
-        .separator-line-header {
-            width: 1400px;
-            height: 0px;
-            left: 40px;
-            top: 200px;
-            position: absolute;
-            outline: 2px black solid;
-            outline-offset: -1px;
-        }
-        /* Caixas de Artigo Cinzas */
-        .article-box {
-            position: absolute;
-            background:  #F5F5F5;
-            border-radius: 40px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        .article-box-1 {
-            width: 650px;
-            height: 277px;
-            left: 80px;
-            top: 311px;
-        }
-        .article-box-2 {
-            width: 648px;
-            height: 271px;
-            left: 80px;
-            top: 638px;
-        }
-        .article-box-3 {
-            width: 641px;
-            height: 277px;
-            left: 780px;
-            top: 311px;
-        }
-
-        /* Banner "Published Articles" */
-        .published-articles-banner-bg {
-            width: 366px;
-            height: 54px;
-            left: 134px;
-            top: 227px;
-            position: absolute;
-            background: #F5F5F5;
-            border-radius: 17px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        .published-articles-banner-text {
-            width: 323px;
-            height: 50px;
-            left: 150px;
-            top: 229px;
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: rgba(0, 0, 0, 0.83);
-            font-size: 32px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Rodapé */
-        .footer-section {
-            width: 1350px;
-            height: 71px;
-            left: 24px;
-            top: 953px;
-            position: absolute;
-        }
-        .footer-line {
-            width: 1400px;
-            height: 0px;
-            left: 38px; /* Relativo ao .footer-section */
-            top: 2px;   /* Relativo ao .footer-section */
-            position: absolute;
-            outline: 2px black solid;
-            outline-offset: -1px;
-        }
-        .footer-icon-1 {
-            width: 65px;
-            height: 65px;
-            left: 610px; /* Relativo ao .footer-section */
-            top: 13px;    /* Relativo ao .footer-section */
-            position: absolute;
-            border-radius: 64px;
-        }
-        .footer-copyright {
-            width: 66.34px;
-            height: 47px;
-            left: 720px; /* Relativo ao .footer-section */
-            top: 18px;    /* Relativo ao .footer-section */
-            position: absolute;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: black;
-            font-size: 12px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .footer-icon-2 {
-            width: 30px;
-            height: 30px;
-            left: 831px; /* Relativo ao .footer-section */
-            top: 27px;    /* Relativo ao .footer-section */
-            position: absolute;
-        }
-        /* Blocos de Texto de Citação */
-        .citation-text {
-            position: absolute;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            color: black;
-            font-size: 24px;
-            font-family: Kokoro, sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
-        }
-        .citation-1 {
-            width: 585px;
-            height: 225px;
-            left: 114px;
-            top: 342px;
-        }
-        .citation-2 {
-            width: 585px;
-            height: 139px;
-            left: 809px;
-            top: 376px;
-        }
-        .citation-3 {
-            width: 514px;
-            height: 200px;
-            left: 133px;
-            top: 674px;
-        }
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/publi.css">
+    <title>Publications</title>
 </head>
 <body>
-        <div class="container">
-         <header class="site-header">
-            <img class="logo" src="../static/img_head_foot/logo.png" alt="Logotipo da Empresa" />
-            <nav class="navigation">
-                <a href="{{ url_for('home') }}" class="nav-item nav-home">Home</a>
-                <a href="{{ url_for('research') }}" class="nav-item nav-research">Research</a>
-                <a href="{{ url_for('team') }}" class="nav-item nav-our-team">Our Team</a>
-                <a href="{{ url_for('publications') }}" class="nav-item nav-publications">Publications</a>
-                <a href="{{ url_for('awards') }}" class="nav-item nav-awards">Awards</a>
-                <a href="{{ url_for('join_us') }}" class="nav-item nav-join-us">Join Us</a>
-            </nav>
-        </header>
-        <div class="separator-line-header"></div>
+    <div class="container">
+        <img class="header-logo" src="../static/img_head_foot/logo.png" alt="Logo" />
+
+        <div class="nav-item nav-home">
+            <a href="{{ url_for('home') }}" class="nav-text">Home</a>
+        </div>
+        <div class="nav-item nav-research">
+            <a href="{{ url_for('research') }}" class="nav-text">Research</a>
+        </div>
+        <div class="nav-item nav-join-us">
+            <a href="{{ url_for('join_us') }}" class="nav-text">Join Us</a>
+        </div>
+        <div class="nav-item nav-our-team">
+            <a href="{{ url_for('team') }}" class="nav-text">Our Team</a>
+        </div>
+        <div class="nav-item nav-awards">
+            <a href="{{ url_for('awards') }}" class="nav-text">Awards</a>
+        </div>
+        <div class="nav-item nav-publications">
+            <a href="{{ url_for('publications') }}" class="nav-text">Publications</a>
+        </div>
+
+    <div class="header-divider"></div>
 
         <div class="article-box article-box-1"></div>
         <div class="article-box article-box-2"></div>

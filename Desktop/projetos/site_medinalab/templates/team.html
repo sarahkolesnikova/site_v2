@@ -1,91 +1,171 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications</title>
-    <style>
-        /* Estilos Globais */
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: Kokoro, sans-serif; /* Assume que a fonte Kokoro está disponível */
-        }
-
-        .page-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            background: white;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        /* Cabeçalho */
-        .header {
-            position: relative; /* Necessário se houver filhos com posicionamento absoluto relativos ao header */
-        }
-
-        .logo {
-            width: 230px;
-            height: 230px;
-            left: 136px;
-            top: 0px;
-            position: absolute;
-            border-radius: 64px;
-        }
-
-        .navigation {
-            /* O contêiner de navegação em si não precisa de posicionamento se os links são posicionados individualmente */
-        }
-
-        .nav-item {
-            position: absolute;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-weight: 400;
-            word-wrap: break-word;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            text-decoration: none;
-        }
-
-        .nav-home { width: 94px; left: 462px; top: 125px; color: #6A09A2; }
-        .nav-research { width: 110px; left: 589px; top: 125px; color: #52894D; }
-        .nav-our-team { width: 126px; left: 730px; top: 125px; color: #6A09A2; }
-        .nav-publications { width: 140px; left: 875px; top: 125px; color: #52894D; }
-        .nav-awards { width: 98px; left: 1048px; top: 125px; color: #6A09A2; }
-        .nav-join-us { width: 111px; left: 1179px; top: 125px; color: #52894D; }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../static/team.css">
+  <title>Team</title>
 </head>
 <body>
-    <div class="page-container">
-        <header class="header">
-            <img class="logo" src="../static/logo.jpg" alt="Logotipo da Empresa" />
-            <nav class="navigation">
-                <a href="{{ url_for('home') }}" class="nav-item nav-home">Home</a>
-                <a href="{{ url_for('research') }}" class="nav-item nav-research">Research</a>
-                <a href="{{ url_for('team') }}" class="nav-item nav-our-team">Our Team</a>
-                <a href="{{ url_for('publications') }}" class="nav-item nav-publications">Publications</a>
-                <a href="{{ url_for('awards') }}" class="nav-item nav-awards">Awards</a>
-                <a href="{{ url_for('join_us') }}" class="nav-item nav-join-us">Join Us</a>
-            </nav>
-        </header>
+    <div class="container">
+        <img class="header-logo" src="../static/img_head_foot/logo.png" alt="Logo" />
 
-        <div class="separator-line-header"></div>
+        <div class="nav-item nav-home">
+            <a href="{{ url_for('home') }}" class="nav-text">Home</a>
+        </div>
+        <div class="nav-item nav-research">
+            <a href="{{ url_for('research') }}" class="nav-text">Research</a>
+        </div>
+        <div class="nav-item nav-join-us">
+            <a href="{{ url_for('join_us') }}" class="nav-text">Join Us</a>
+        </div>
+        <div class="nav-item nav-our-team">
+            <a href="{{ url_for('team') }}" class="nav-text">Our Team</a>
+        </div>
+        <div class="nav-item nav-awards">
+            <a href="{{ url_for('awards') }}" class="nav-text">Awards</a>
+        </div>
+        <div class="nav-item nav-publications">
+            <a href="{{ url_for('publications') }}" class="nav-text">Publications</a>
+        </div>
 
+        <div class="header-divider"></div>
 
-        <footer class="footer">
-            <div class="footer-separator"></div>
-            <img class="footer-logo" src="../static/icone_MedinaLab.png" alt="Logotipo do Rodapé" />
-            <div class="copyright-wrapper">
-                 <p class="copyright-text">© 2025 All Rights Reserved </p>
+<div class="section-banner-bg members-banner-bg"></div>
+        <div class="section-banner-text members-banner-text">Members</div>
+
+        <div class="card-container card-tiago">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Tiago Medina, PhD<br/></span>
+                <span class="card-text-role">Principal Investigator – Translational Immune-Oncology<br/>   Assistant Professor, Department of Molecular Medicine<br/>   University of Southern Denmark – Odense, Denmark<br/>   📧 medina@health.sdu.dk</span>
             </div>
-            <img class="footer-icon" src="../static/icon-instagram.png" alt="Ícone Decorativo" />
-        </footer>
+        </div>
+        <div class="card-container card-gabriela">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Gabriela Sarti Kinker, PhD<br/></span>
+                <span class="card-text-role">Research Scientist – Translational Imune-Oncology<br/>    A.C. Camargo Cancer Center – São Paulo, Brazil<br/>    📧  gabriela.kinker@gmail.com<br/></span>
+            </div>
+        </div>
+        <div class="card-container card-vladmir">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Vladmir, PhD<br/></span>
+                <span class="card-text-role">Research Scientist – Translational Imune-Oncology</span>
+            </div>
+        </div>
+        <div class="card-container card-mariela">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Mariela P. Cabral Piccin, PhD<br/>Pharmacist - </span>
+                <span class="card-text-role">Scientific Analyst</span>
+            </div>
+        </div>
+        <div class="card-container card-arianne">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Arianne Fagotti Gusmao<br/>Biomedical Scientist<br/></span>
+                <span class="card-text-role">Technical Coordinator - Flow Cytometry Core Facility</span>
+            </div>
+        </div>
+        <div class="card-container card-raylane">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Raylane Cambuí, PhD<br/></span>
+                <span class="card-text-role">Biomedical Scientist<br/>Postdoctoral Researcher</span>
+            </div>
+        </div>
+        <div class="card-container card-leticia">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Maria Letícia Rodrigues Carvalho<br/></span>
+                <span class="card-text-role">Pharmacist<br/>PhD Student</span>
+            </div>
+        </div>
+        <div class="card-container card-emmanuel">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Emmanuel Vinícius Oliveira Araújo<br/></span>
+                <span class="card-text-role">Pharmacist<br/>PhD Student</span>
+            </div>
+        </div>
+        <div class="card-container card-maria-luisa">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Maria Luisa Marques Pierre<br/>Biomedical Scientist<br/></span>
+                <span class="card-text-role">PhD Student </span>
+            </div>
+        </div>
+        <div class="card-container card-bruno">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Bruno Dalbelo<br/>Biologist - </span>
+                <span class="card-text-role">PhD Student </span>
+            </div>
+        </div>
+        <div class="card-container card-julianna">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Julianna Pereira dos Santos<br/></span>
+                <span class="card-text-role">Pharmacist<br/>Master's Student</span>
+            </div>
+        </div>
+        <div class="card-container card-daniela">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">
+                <span class="card-text-name">Daniela<br/>Biologist<br/></span>
+                <span class="card-text-role">Master's Student </span>
+            </div>
+        </div>
+
+        <div class="section-banner-bg alumni-banner-bg"></div>
+        <div class="section-banner-text alumni-banner-text">Alumni </div>
+        
+        <div class="card-container card-glauco">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">Glauco Akelinghton F. Vitiello, PhD<br/>postdoc, completed in:<br/>Current position: Professor in the Department of Immunology, Parasitology, and General Pathology at the State University of Londrina.</div>
+        </div>
+        <div class="card-container card-wallax">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">Wallax Augusto Silva Ferreira, PhD<br/>postdoc, completed in:<br/>Current position: Professor in the Department of Immunology, Parasitology, and General Pathology at the State University of Londrina.</div>
+        </div>
+        <div class="card-container card-alexandre">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">Alexandre Silva Chaves, PhD<br/>Pharmacist<br/>PhD,  completed in: </div>
+        </div>
+        <div class="card-container card-amanda">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">Amanda Rondinelli<br/>Master's degree, completed in:<br/>Current position: </div>
+        </div>
+        <div class="card-container card-pedro">
+            <div class="card-background"></div>
+            <img class="card-image" src="https://placehold.co/162x170" />
+            <div class="card-text-container">Pedro Henrique Barbosa Pereira<br/>Master's degree completed in: 2022</div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-line"></div>
+            <img class="footer-icon1" src="../static/img_head_foot/iconeMedinaLab.png" />
+            <div class="footer-copyright">© 2025 All Rights Reserved </div>
+            <img class="footer-icon2" src="../static/img_head_foot/icone_instagram.png" />
+        </div>
     </div>
 </body>
 </html>
